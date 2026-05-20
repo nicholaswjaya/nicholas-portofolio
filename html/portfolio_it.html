@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio — Nicholas Wijaya</title>
+    <meta name="description" content="Nicholas Wijaya's academic portfolio — projects, coursework, and research.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            overflow-x: hidden;
+            background-color: #fff;
+            font-family: "Gafata", sans-serif;
+            color: #0f172a;
+        }
+
+        /* ============================================================
+           NAVBAR
+           ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 12px; left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 64px);
+            max-width: 1200px;
+            z-index: 200;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px) saturate(120%);
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(12,18,40,0.06);
+            border: 1px solid rgba(10,22,40,0.04);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .brand {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 700;
+            color: #0f172a;
+            text-decoration: none;
+            letter-spacing: 0.4px;
+            font-size: 1.2rem;
+        }
+
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+
+        .nav-links a {
+            color: #0f172a;
+            text-decoration: none;
+            font-family: "Inconsolata", monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 8px 6px;
+            transition: color 0.18s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 4px;
+            height: 2px;
+            background: #0b5cff;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.22s cubic-bezier(.2,.9,.2,1);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-actions { min-width: 40px; }
+
+
+        /* ============================================================
+           PAGE HEADER
+           ============================================================ */
+        .page-header {
+            padding: 10rem 8% 4rem;
+            max-width: 900px;
+        }
+
+        .page-label {
+            display: block;
+            font-family: "Inconsolata", monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #0b5cff;
+            margin-bottom: 0.6rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.1s;
+        }
+
+        .page-title {
+            font-family: "Instrument Serif", serif;
+            font-size: 5.5rem;
+            line-height: 1.05;
+            font-weight: 400;
+            color: #0f172a;
+            opacity: 0;
+            animation: fadeInUp 0.9s ease forwards 0.25s;
+        }
+
+        .page-title em { font-style: italic; color: #0b5cff; }
+
+        .page-subtitle {
+            font-family: "Gafata", sans-serif;
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 520px;
+            line-height: 1.6;
+            margin-top: 0.8rem;
+            opacity: 0;
+            animation: fadeInUp 0.9s ease forwards 0.4s;
+        }
+
+        .header-rule {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #0b5cff22, #e2e8f0, transparent);
+            margin: 0 8%;
+            opacity: 0;
+            animation: fadeInOnly 1s ease forwards 0.6s;
+        }
+
+
+        /* ============================================================
+           PROJECT COUNT STRIP
+           ============================================================ */
+        .count-strip {
+            padding: 2.5rem 8% 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.7s;
+        }
+
+        .count-strip p {
+            font-family: "Inconsolata", monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .count-strip p span {
+            color: #0f172a;
+            font-weight: 800;
+        }
+
+
+        /* ============================================================
+           PROJECT GRID
+           ============================================================ */
+        .projects {
+            padding: 3rem 8% 6rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem 3.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Wide full-bleed first project */
+        .project-card:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .project-card:first-child .card-inner {
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+        }
+
+        .project-card:first-child .card-visual {
+            aspect-ratio: 16 / 9;
+        }
+
+        /* ---- Card wrapper ---- */
+        .project-card {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .project-card.visible { opacity: 1; transform: translateY(0); }
+
+        .card-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        /* ---- Visual block ---- */
+        .card-visual {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 14px 14px 0 0;
+            background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 60%, #e9f0fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(15,23,42,0.07);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card:hover .card-visual {
+            box-shadow: 0 20px 48px rgba(15,23,42,0.13);
+        }
+
+        /* Image if provided */
+        .card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .visual-placeholder {
+            text-align: center;
+            color: #64748b;
+            font-family: "Gafata", sans-serif;
+            font-size: 0.95rem;
+            padding: 2rem;
+            line-height: 1.5;
+            pointer-events: none;
+        }
+
+        .visual-placeholder .ph-icon {
+            font-size: 2.4rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.38;
+        }
+
+        /* Hover overlay on image */
+        .card-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(11,92,255,0.04);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            border-radius: inherit;
+        }
+
+        .project-card:hover .card-visual::after { opacity: 1; }
+
+
+        /* ---- Link bar ---- */
+        .card-links {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            padding: 0.75rem 1rem;
+            background: #f8fafc;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            border-radius: 0 0 14px 14px;
+        }
+
+        .card-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: "Inconsolata", monospace;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: #0b5cff;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1.5px solid rgba(11,92,255,0.18);
+            background: #fff;
+            transition: all 0.18s ease;
+            white-space: nowrap;
+        }
+
+        .card-link-btn:hover {
+            background: #0b5cff;
+            color: #fff;
+            border-color: #0b5cff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(11,92,255,0.18);
+        }
+
+        .card-link-btn .btn-arrow {
+            transition: transform 0.18s ease;
+        }
+
+        .card-link-btn:hover .btn-arrow { transform: translateX(3px); }
+
+
+        /* ---- Text block ---- */
+        .card-text {
+            padding: 1.5rem 0 0;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .card-index {
+            font-family: "Inconsolata", monospace;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #0b5cff;
+        }
+
+        .card-tag {
+            font-family: "Inconsolata", monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        .card-title {
+            font-family: "Instrument Serif", serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-title em { font-style: italic; }
+
+        .card-desc {
+            font-family: "Gafata", sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        /* First card featured text tweaks */
+        .project-card:first-child .card-text { padding: 0; }
+
+        .project-card:first-child .card-title {
+            font-size: 2.4rem;
+        }
+
+        .project-card:first-child .card-desc {
+            font-size: 1.05rem;
+        }
+
+
+        /* ============================================================
+           OTHER PAGES CTA
+           ============================================================ */
+        .other-pages {
+            padding: 0 8% 6rem;
+        }
+
+        .other-pages h3 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 1.2rem;
+        }
+
+        .page-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .page-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: "Inconsolata", monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #0f172a;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 100px;
+            border: 1.5px solid rgba(15,23,42,0.12);
+            transition: all 0.2s ease;
+        }
+
+        .page-pill:hover {
+            background: #0f172a;
+            color: #fff;
+            border-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15,23,42,0.12);
+        }
+
+        .page-pill .arrow { transition: transform 0.2s ease; }
+        .page-pill:hover .arrow { transform: translateX(4px); }
+
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInOnly {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 960px) {
+            .projects { grid-template-columns: 1fr; }
+            .project-card:first-child { grid-column: 1; }
+            .project-card:first-child .card-inner {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .project-card:first-child .card-text { padding: 1.5rem 0 0; }
+            .page-title { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .navbar { width: calc(100% - 32px); }
+            .page-title { font-size: 2.8rem; }
+            .page-header { padding: 8rem 6% 3rem; }
+            .projects { padding: 2rem 6% 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">Nicholas</a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#achievements">Achievements</a>
+                <a href="index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ================ -->
+    <header class="page-header">
+        <span class="page-label">Portfolio · Academics</span>
+        <h1 class="page-title">Academic<br><em>Projects</em></h1>
+        <p class="page-subtitle">
+            Coursework, research, and collaborative projects from my time
+            at university — built, tested, and learned from.
+        </p>
+    </header>
+
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ================= PROJECT COUNT ================== -->
+    <div class="count-strip">
+        <p><span>5</span> projects · academics</p>
+    </div>
+    <!-- ================================================== -->
+
+
+    <!-- =================== PROJECTS ==================== -->
+    <section class="projects">
+
+        <!-- Featured / Project 01 -->
+        <article class="project-card" data-scroll>
+            <div class="card-inner">
+                <div>
+                    <div class="card-visual">
+                        <div class="visual-placeholder">
+                            <span class="ph-icon">🖥️</span>
+                            Project screenshot / mockup<br>Inventory System
+                        </div>
+                    </div>
+                    <div class="card-links">
+                        <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                            GitHub <span class="btn-arrow">→</span>
+                        </a>
+                        <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                            Live Demo <span class="btn-arrow">→</span>
+                        </a>
+                        <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                            Full Report (PDF) <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="card-meta">
+                        <span class="card-index">01 — Featured</span>
+                        <span class="card-tag">Web · Capstone</span>
+                        <span class="card-tag">2023</span>
+                    </div>
+                    <h2 class="card-title">Web-Based <em>Inventory System</em> for Local Business</h2>
+                    <p class="card-desc">
+                        A full-stack inventory management application built as the capstone
+                        project for our Software Engineering subject. The client was a local
+                        retail business that needed a simple way to track stock, generate
+                        reports, and manage suppliers in one dashboard. My role as project
+                        lead covered system architecture, database design, and coordinating
+                        a five-person team from initial brief to final handoff.
+                        Built with PHP, MySQL, and vanilla JS — no frameworks, by choice,
+                        to keep the deployment as lean as possible for the client's shared
+                        hosting setup.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="project-card" data-scroll>
+            <div class="card-inner">
+                <div class="card-visual">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">📊</span>
+                        Chart / analysis screenshot<br>Data Analysis Report
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        View Report <span class="btn-arrow">→</span>
+                    </a>
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Dataset <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+                <div class="card-text">
+                    <div class="card-meta">
+                        <span class="card-index">02</span>
+                        <span class="card-tag">Data · Research</span>
+                        <span class="card-tag">2022</span>
+                    </div>
+                    <h2 class="card-title">Social Media Usage &<br><em>Student Productivity</em></h2>
+                    <p class="card-desc">
+                        A quantitative research study analyzing the correlation between
+                        social media screen time and academic performance among university
+                        students. Surveyed 120 respondents, cleaned and visualized data
+                        in Python (Pandas + Matplotlib), and presented findings to a panel.
+                        The study found a moderate negative correlation — and a few
+                        surprising outliers that made the discussion very interesting.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project-card" data-scroll>
+            <div class="card-inner">
+                <div class="card-visual">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">🎨</span>
+                        UI mockup / Figma screenshot<br>UX Design Project
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Figma Prototype <span class="btn-arrow">→</span>
+                    </a>
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Case Study <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+                <div class="card-text">
+                    <div class="card-meta">
+                        <span class="card-index">03</span>
+                        <span class="card-tag">UX · Design</span>
+                        <span class="card-tag">2023</span>
+                    </div>
+                    <h2 class="card-title"><em>Campus Event</em> App — UX Design Case Study</h2>
+                    <p class="card-desc">
+                        Designed a mobile app concept for discovering and RSVPing to
+                        campus events. Conducted five user interviews, built affinity maps,
+                        sketched low-fi wireframes, and iterated to a polished hi-fi
+                        prototype in Figma. Usability testing with eight participants
+                        surfaced three major pain points that shaped the final design.
+                        This project was awarded the highest mark in the cohort.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="project-card" data-scroll>
+            <div class="card-inner">
+                <div class="card-visual">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">📝</span>
+                        Thesis document / cover<br>Final Thesis
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Read Thesis (PDF) <span class="btn-arrow">→</span>
+                    </a>
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Abstract <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+                <div class="card-text">
+                    <div class="card-meta">
+                        <span class="card-index">04</span>
+                        <span class="card-tag">Research · Thesis</span>
+                        <span class="card-tag">2024</span>
+                    </div>
+                    <h2 class="card-title">UX Design &<br><em>Community Engagement</em></h2>
+                    <p class="card-desc">
+                        Final thesis exploring how participatory UX design methods can
+                        strengthen engagement in youth-led community platforms. Drew from
+                        both academic literature and my personal experience as a youth
+                        ambassador. Received a distinction grade from the panel, with
+                        special commendation for the primary research component.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 05 -->
+        <article class="project-card" data-scroll>
+            <div class="card-inner">
+                <div class="card-visual">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">🤝</span>
+                        Team / presentation photo<br>Group Business Case
+                    </div>
+                </div>
+                <div class="card-links">
+                    <a class="card-link-btn" href="#" target="_blank" rel="noopener">
+                        Presentation Deck <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+                <div class="card-text">
+                    <div class="card-meta">
+                        <span class="card-index">05</span>
+                        <span class="card-tag">Business · Strategy</span>
+                        <span class="card-tag">2022</span>
+                    </div>
+                    <h2 class="card-title">Startup Business Case<br><em>Competition</em></h2>
+                    <p class="card-desc">
+                        Led a team of four in our university's annual business case
+                        competition. We pitched a sustainable packaging startup concept
+                        to a panel of industry judges. Responsible for market research,
+                        financial projections, and the live pitch delivery. We placed
+                        in the top 10 out of 38 teams — a result I'm genuinely proud of
+                        given it was my first time doing anything like it.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+    <!-- ================================================== -->
+
+
+    <!-- ================= OTHER PAGES ==================== -->
+    <section class="other-pages">
+        <h3>Explore other portfolios</h3>
+        <div class="page-links">
+            <a class="page-pill" href="portfolio_it.html">
+                IT Projects <span class="arrow">→</span>
+            </a>
+            <a class="page-pill" href="portfolio_talent.html">
+                Model & Talent <span class="arrow">→</span>
+            </a>
+            <a class="page-pill" href="../index.html">
+                Back to Home <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        const cards = document.querySelectorAll('[data-scroll]');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        cards.forEach(c => obs.observe(c));
+    </script>
+
+</body>
+</html>
