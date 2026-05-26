@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Wijaya's IT and personal project portfolio.">
+    
+    <title>Personal Projects — Nicholas Wijaya</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="../../index.html">
+                <img src="../../images/logo_n.png" alt="Nicholas Wijaya">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home">Home</a>
+                <a href="../../index.html#about">About</a>
+                <a href="../../index.html#experience">Experience</a>
+                <a href="../../index.html#achievements">Achievements</a>
+                <a href="../../index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ============== -->
+    <header class="page-header">
+        <span class="page-label">Portfolio · Personal Projects</span>
+        <h1 class="page-title">Personal <em>Projects</em></h1>
+        <p class="page-subtitle">
+            Software, web, and IT-focused projects with a practical edge — from planning to build, testing, and delivery.
+        </p>
+    </header>
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== STORY SECTION =========== -->
+    <main class="story">
+
+        <!-- Project 01 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 01</span>
+                <h2 class="chapter-title">Web Development <em>Fundamentals</em></h2>
+                <span class="chapter-tag">2025 · HTML / CSS</span>
+                <p class="chapter-body">
+                    My first personal web project focused on mastering the fundamentals of HTML and CSS. 
+                    I built a responsive website from scratch, learning best practices in semantic HTML, 
+                    CSS grid and flexbox layouts, and responsive design. This project became the foundation 
+                    for understanding how web pages are structured and styled.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">🌐</span>
+                        Web Project
+                    </div>
+                </div>
+                <span class="year-badge">2025</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— building momentum —</i><span></span>
+        </div>
+
+        <!-- Project 02 -->
+        <article class="chapter flip" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 02</span>
+                <h2 class="chapter-title">Interactive <em>Web Features</em></h2>
+                <span class="chapter-tag">2025 · JavaScript</span>
+                <p class="chapter-body">
+                    This project introduced me to JavaScript and interactive web development. 
+                    I created dynamic features including form validation, DOM manipulation, 
+                    and event handling. Understanding how to make websites interactive opened up 
+                    new possibilities and deeper insights into the relationship between frontend and user experience.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">⚙️</span>
+                        JavaScript Project
+                    </div>
+                </div>
+                <span class="year-badge">2025</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— moving forward —</i><span></span>
+        </div>
+
+        <!-- Project 03 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 03</span>
+                <h2 class="chapter-title">Full Stack <em>Development</em></h2>
+                <span class="chapter-tag">2026 · Backend & Database</span>
+                <p class="chapter-body">
+                    Expanding beyond frontend, I started exploring full-stack development with backend technologies 
+                    and databases. This project involved building a complete application with data persistence, 
+                    user authentication, and database management. It was a significant leap in understanding how 
+                    different parts of a web application work together.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">🔧</span>
+                        Full Stack Project
+                    </div>
+                </div>
+                <span class="year-badge">2026</span>
+            </div>
+        </article>
+
+    </main>
+    <!-- ================================================== -->
+
+
+    <!-- =================== CLOSING ====================== -->
+    <section class="story-closing">
+        <div class="closing-card" data-scroll>
+            <p class="closing-quote">
+                "Every project is a learning opportunity. 
+                The code I write today is better than yesterday's, 
+                and tomorrow's will be better still."
+            </p>
+            <span class="closing-attr">— Nicholas Wijaya</span>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        // Scroll-reveal for chapters and closing card
+        const scrollEls = document.querySelectorAll('[data-scroll]');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        scrollEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

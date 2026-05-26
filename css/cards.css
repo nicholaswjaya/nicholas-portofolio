@@ -1,0 +1,86 @@
+/* ============================================================
+   CARD COMPONENTS
+   ============================================================ */
+
+.card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 0;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(180deg, #eef2ff, #f8fafc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center 75%;
+}
+
+/* Image position overrides untuk card spesifik */
+.card-image[id="creative"] img {
+    object-position: center 35%;
+}
+
+.card-image[id="personal_cover"] img {
+    object-position: left 35%;
+}
+
+.img-placeholder {
+    color: var(--secondary-text);
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.card-body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.card p {
+    color: var(--secondary-text);
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.card-link {
+    margin-top: 0.4rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity var(--transition-fast);
+    display: inline-block;
+}
+
+.card-link:hover {
+    opacity: 0.8;
+}

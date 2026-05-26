@@ -1,0 +1,135 @@
+/* ============================================================
+   NAVBAR STYLES
+   ============================================================ */
+
+.navbar {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 64px);
+    max-width: 1200px;
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px) saturate(120%);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.brand {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: var(--dark-text);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--dark-text);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 8px 6px;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.2, 1);
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-actions {
+    min-width: 40px;
+}
+
+
+/* ============================================================
+   NAVBAR RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .navbar {
+        width: calc(100% - 32px);
+    }
+
+    .nav-inner {
+        padding: 8px 16px;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .brand img {
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: calc(100% - 16px);
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 6px 4px;
+    }
+
+    .brand {
+        font-size: 0.9rem;
+    }
+
+    .brand img {
+        height: 24px;
+    }
+}

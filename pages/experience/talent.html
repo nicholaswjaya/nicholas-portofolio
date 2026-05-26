@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Wijaya's modeling and talent experiences.">
+    
+    <title>Creative Journey — Nicholas Wijaya</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="../../index.html">
+                <img src="../../images/logo_n.png" alt="Nicholas Wijaya">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home">Home</a>
+                <a href="../../index.html#about">About</a>
+                <a href="../../index.html#experience">Experience</a>
+                <a href="../../index.html#achievements">Achievements</a>
+                <a href="../../index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ============== -->
+    <header class="page-header">
+        <span class="page-label">Experience · Creative Journey</span>
+        <h1 class="page-title">My <em>Modeling & Talent</em> Journey</h1>
+        <p class="page-subtitle">
+            Exploring opportunities in modeling, public appearances, ambassador roles, and the creative industry.
+        </p>
+    </header>
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== STORY SECTION =========== -->
+    <main class="story">
+
+        <!-- Chapter 01 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 01</span>
+                <h2 class="chapter-title">Stepping Into a<br><em>New World</em></h2>
+                <span class="chapter-tag">2023 · First Step</span>
+                <p class="chapter-body">
+                    My journey officially began when I participated in Abang None Kota Tangerang Selatan 2023.
+                    At first, stepping into the world of pageantry and public appearances felt completely new to me.
+                    I had little experience in public speaking, stage presence, or representing others, but I was eager to challenge myself and grow beyond my comfort zone.
+                    Through this experience, I learned that being an ambassador is not only about appearance — it’s about confidence, communication, and the ability to inspire people around you.
+                    This first step became the foundation of everything that followed in my creative and personal journey.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <img src="../../images/abang.jpeg" alt="Abang Nona Kota Tangerang Selatan 2023">
+                </div>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— continuing the story —</i><span></span>
+        </div>
+
+        <!-- Chapter 02 -->
+        <article class="chapter flip" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 02</span>
+                <h2 class="chapter-title">Exploring the<br><em>Creative Industry</em></h2>
+                <span class="chapter-tag">2024 · Growth</span>
+                <p class="chapter-body">
+                    After entering the ambassador environment, I began exploring the creative industry more seriously.
+                    I started gaining experience in fashion shows, video talent projects, catalog modeling, and various creative productions that helped me develop both confidence and professionalism.
+                    Each opportunity introduced me to different environments and creative challenges.
+                    From working in front of cameras to performing on stage, I gradually learned how to express myself, adapt quickly, and build a stronger personal presence within the industry.
+                    This phase became an important turning point where I realized my passion for both creative talent and public representation.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <img src="../../images/foto_duduk.jpeg" alt="Foto Duduk">
+                </div>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— the story goes on —</i><span></span>
+        </div>
+
+        <!-- Chapter 03 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 03</span>
+                <h2 class="chapter-title">Representing with<br><em>Purpose</em></h2>
+                <span class="chapter-tag">2025 · Achievement</span>
+                <p class="chapter-body">
+                    In 2025, I was honored to be selected as Wakil II Kang Banten 2025, representing the province on a larger stage. This experience taught me that being an ambassador carries a deeper responsibility — not only to represent oneself, but also to represent culture, values, and the community with purpose and integrity.
+                    The journey strengthened my leadership, communication, and adaptability even further.
+                    Today, I continue growing as both a creative talent and tourism ambassador, combining creativity, confidence, and representation as part of my ongoing journey.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">👑</span>
+                        Photo placeholder<br>Ambassador Award / Recognition
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    <!-- ================================================== -->
+
+
+    <!-- =================== CLOSING ====================== -->
+    <section class="story-closing">
+        <div class="closing-card" data-scroll>
+            <p class="closing-quote">
+                "Being in the creative industry taught me that true talent 
+                isn't just about appearance — it's about confidence, 
+                purpose, and the willingness to represent something bigger than yourself."
+            </p>
+            <span class="closing-attr">— Nicholas Wijaya</span>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        // Scroll-reveal for chapters and closing card
+        const scrollEls = document.querySelectorAll('[data-scroll]');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        scrollEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

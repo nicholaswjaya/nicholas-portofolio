@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Wijaya's arts and sports experiences.">
+    
+    <title>Arts & Sports — Nicholas Wijaya</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="../../index.html">
+                <img src="../../images/logo_n.png" alt="Nicholas Wijaya">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home">Home</a>
+                <a href="../../index.html#about">About</a>
+                <a href="../../index.html#experience">Experience</a>
+                <a href="../../index.html#achievements">Achievements</a>
+                <a href="../../index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ============== -->
+    <header class="page-header">
+        <span class="page-label">Experience · Arts & Sports</span>
+        <h1 class="page-title">My <em>Arts & Sports</em> Journey</h1>
+        <p class="page-subtitle">
+            From creative expression to competitive energy, this journey reflects the passion, discipline, and experiences that continue to shape who I am.
+        </p>
+    </header>
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== STORY SECTION =========== -->
+    <main class="story">
+
+        <!-- Chapter 01 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 01</span>
+                <h2 class="chapter-title">Where Curiosity Began</h2>
+                <span class="chapter-tag">2018 · Fifth Grade</span>
+                <p class="chapter-body">
+                    My journey with music started in fifth grade when I first picked up a guitar and tried learning it on my own.
+                    After reaching a point where I felt stuck, I became even more curious about music and decided to learn classical piano with my neighbor for around four months.
+                    From there, most of my learning journey became self-taught again, including studying music theory and understanding music beyond simply playing instruments.
+                    Throughout middle school and high school, music became an important part of my life. I performed in school events and occasionally represented my school at external performances.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <img src="../../images/band.jpeg" alt="Music Performance">
+                </div>
+                <span class="year-badge">2018</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— continuing the story —</i><span></span>
+        </div>
+
+        <!-- Chapter 02 -->
+        <article class="chapter flip" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 02</span>
+                <h2 class="chapter-title">Beyond the Court<br><em>And the Stage</em></h2>
+                <span class="chapter-tag">2022 · Highschool</span>
+                <p class="chapter-body">
+                    During high school, I also developed a strong interest in basketball. I actively participated in competitions and represented my school in several tournaments, including a basketball competition between regional tourism ambassadors where I represented South Tangerang.
+                    While I never pursued sports professionally, basketball taught me discipline, teamwork, consistency, and how to grow under pressure.
+                    At the same time, my involvement in music continued to evolve.
+                    I had the opportunity to become a music arranger for "Gelar Karya Kang Nong Banten," representing South Tangerang, where I learned how to combine creativity with responsibility.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <img src="../../images/basket_sbl.jpeg" alt="Basketball">
+                </div>
+                <span class="year-badge">2022</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— the story goes on —</i><span></span>
+        </div>
+
+        <!-- Chapter 03 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Chapter 03</span>
+                <h2 class="chapter-title">A Journey<br><em>Still in Progress</em></h2>
+                <span class="chapter-tag">2025 · Present</span>
+                <p class="chapter-body">
+                    Today, music, sports, and creative experiences continue to shape who I am.
+                    I still enjoy performing at small campus events, exploring new opportunities, and learning through every experience I take part in.
+                    Looking back, these journeys taught me far more than technical skills.
+                    They shaped my creativity, adaptability, confidence, and willingness to keep growing.
+                    And honestly, I believe this is only the beginning — there are still many experiences, challenges, and ideas I look forward to exploring in the future.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <img src="../../images/talentshow.jpg" alt="Performance">
+                </div>
+                <span class="year-badge">2025</span>
+            </div>
+        </article>
+
+    </main>
+    <!-- ================================================== -->
+
+
+    <!-- =================== CLOSING ====================== -->
+    <section class="story-closing">
+        <div class="closing-card" data-scroll>
+            <p class="closing-quote">
+                "Art and sports taught me that progress isn't about being the best,
+                it's about growing better than I was yesterday."
+            </p>
+            <span class="closing-attr">— Nicholas Wijaya</span>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        // Scroll-reveal for chapters and closing card
+        const scrollEls = document.querySelectorAll('[data-scroll]');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        scrollEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

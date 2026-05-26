@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Wijaya</title>
     <meta name="description" content="Nicholas Wijaya's personal website, showcasing his projects, skills, and contact information.">
     <meta property="og:title" content="Nicholas Wijaya">
     <meta property="og:description" content="Nicholas Wijaya's personal website, showcasing his projects, skills, and contact information.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Nicholas Wijaya">
+    
+    <title>Nicholas Wijaya</title>
 
-    <!-- Google Fonts (digabung jadi 1 request) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style_index.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
     <!-- ===================== NAVBAR ===================== -->
@@ -32,17 +41,14 @@
                 <a href="#achievements">Achievements</a>
                 <a href="#portfolio">Portfolio</a>
             </div>
-            <div class="nav-actions">
-                <!-- future: add contact button or icon here -->
-            </div>
+            <div class="nav-actions"></div>
         </div>
     </nav>
     <!-- ================================================== -->
 
 
-    <!-- ===================== HERO ======================= -->
+    <!-- ===================== HERO SECTION ============== -->
     <section class="hero" id="home">
-
         <div class="hero-content">
             <h1 class="hero-title">
                 <span id="hello">Hello!</span>
@@ -73,26 +79,25 @@
                 <img src="images/simple-icons_gmail.png" alt="Gmail">
             </a>
         </div>
-
     </section>
     <!-- ================================================== -->
 
 
-    <!-- ============= SECTION SELANJUTNYA ================ -->
-    <!-- Tinggal isi konten di dalam masing-masing section  -->
-
+    <!-- ===================== ABOUT SECTION ============ -->
     <section class="section-about" id="about">
         <div class="about-container">
             <div class="about-photo">
-                    <div class="photo-placeholder"><img src="images/fotoabout.jpeg" alt="Foto duduk"></div>
+                <div class="photo-placeholder">
+                    <img src="images/fotoabout.jpeg" alt="About photo">
+                </div>
             </div>
             <div class="about-content">
                 <h2>About Me</h2>
-                <p id="about-description">
-                    I am someone who enjoys learning new things, especially when it challenges me to grow and step out of my comfort zone. I’m naturally curious and open to exploring creative work and technology.
-                    <br>Outside of my studies, I stay active through sports and find balance in music and art.<br>
-                    These help shape how I see and approach life.
-                    I would describe myself as opportunistic in a positive way and consistently hardworking in what I choose to pursue.<br> My experiences in youth activities and creative environments have shaped how I adapt and grow.
+                <p>
+                    I am someone who enjoys learning new things, especially when it challenges me to grow and step out of my comfort zone. I'm naturally curious and open to exploring creative work and technology.
+                </p>
+                <p>
+                    Outside of my studies, I stay active through sports and find balance in music and art. These help shape how I see and approach life. I would describe myself as opportunistic in a positive way and consistently hardworking in what I choose to pursue. My experiences in youth activities and creative environments have shaped how I adapt and grow.
                 </p>
                 <p>
                     Born in February 2006, based in Indonesia.
@@ -100,7 +105,10 @@
             </div>
         </div>
     </section>
+    <!-- ================================================== -->
 
+
+    <!-- ===================== EXPERIENCE SECTION ======== -->
     <section class="section-work" id="experience">
         <div class="work-intro">
             <h2>Experience</h2>
@@ -115,7 +123,7 @@
                 <div class="card-body">
                     <h3>Academics</h3>
                     <p>A glimpse into my academic journey, campus activities, and personal development.</p>
-                    <a class="card-link" href="html/experience_academic.html">Read more →</a>
+                    <a class="card-link" href="pages/experience/academic.html">Read more →</a>
                 </div>
             </article>
  
@@ -126,7 +134,7 @@
                 <div class="card-body">
                     <h3>Arts & Sports</h3>
                     <p>Building confidence and creativity through years of involvement in arts, sports, and public performances.</p>
-                    <a class="card-link" href="html/experience_art.html">Read more →</a>
+                    <a class="card-link" href="pages/experience/art.html">Read more →</a>
                 </div>
             </article>
 
@@ -137,12 +145,15 @@
                 <div class="card-body">
                     <h3>Creative Journey</h3>
                     <p>Exploring opportunities in modeling, public appearances, ambassador roles, and the creative industry.</p>
-                    <a class="card-link" href="./experience_model_talent.html">Read more →</a>
+                    <a class="card-link" href="pages/experience/talent.html">Read more →</a>
                 </div>
             </article>
         </div>
     </section>
-            
+    <!-- ================================================== -->
+
+
+    <!-- ===================== ACHIEVEMENTS SECTION ====== -->
     <section class="section-achievements" id="achievements">
         <div class="achievements-inner">
             <div class="achievements-content">
@@ -157,23 +168,25 @@
 
                     <div class="achievement-item">
                         <h4>Abang Berbakat 2023 - Duta Wisata Kota Tangerang Selatan</h4>
-                        <p>Received the “Abang Berbakat” title in the Duta Wisata Kota Tangerang Selatan program, recognizing creativity, confidence, and performance throughout the selection process. This experience strengthened my public speaking abilities, stage presence, and confidence in expressing ideas while representing youth and local culture in a professional environment.</p>
+                        <p>Received the "Abang Berbakat" title in the Duta Wisata Kota Tangerang Selatan program, recognizing creativity, confidence, and performance throughout the selection process. This experience strengthened my public speaking abilities, stage presence, and confidence in expressing ideas while representing youth and local culture in a professional environment.</p>
                     </div>
-                       
-                    <!-- Removed third item per request; keeping two main achievements -->
                 </div>
             </div>
+
             <aside class="achievements-gallery">
                 <div class="photo formal">
-                    <img src="images/knb.jpeg" alt="Foto formal">
+                    <img src="images/knb.jpeg" alt="Wakil II Kang Banten 2025">
                 </div>
                 <div class="photo event">
-                    <img src="images/abang.jpeg" alt="Foto event">
+                    <img src="images/abang.jpeg" alt="Abang Berbakat 2023">
                 </div>
             </aside>
         </div>
     </section>
+    <!-- ================================================== -->
 
+
+    <!-- ===================== PORTFOLIO SECTION ======== -->
     <section class="section-portfolio" id="portfolio">
         <div class="work-intro">
             <h2>Portfolio</h2>
@@ -187,9 +200,8 @@
                 </div>
                 <div class="card-body">
                     <h3>Academics</h3>
-                    <p>Assignments, university tasks, and coursework projects that explore problem solving,
-                    research, and presentation skills within an academic setting.</p>
-                    <a class="card-link" href="html/portfolio_academic.html">Read more →</a>
+                    <p>Assignments, university tasks, and coursework projects that explore problem solving, research, and presentation skills within an academic setting.</p>
+                    <a class="card-link" href="pages/portfolio/academic.html">Read more →</a>
                 </div>
             </article>
            
@@ -199,9 +211,8 @@
                 </div>
                 <div class="card-body">
                     <h3>Personal Projects</h3>
-                    <p>Software, web, and IT-focused projects with a practical edge — from planning to build,
-                    testing, and delivery.</p>
-                    <a class="card-link" href="portfolio_it.html">Read more →</a>
+                    <p>Software, web, and IT-focused projects with a practical edge — from planning to build, testing, and delivery.</p>
+                    <a class="card-link" href="pages/portfolio/it.html">Read more →</a>
                 </div>
             </article>
 
@@ -211,14 +222,16 @@
                 </div>
                 <div class="card-body">
                     <h3>Talent / Model</h3>
-                    <p>Selected modeling and talent work examples, showcasing presentation, styling,
-                    and performance experience.</p>
-                    <a class="card-link" href="portfolio_talent.html">Read more →</a>
+                    <p>Selected modeling and talent work examples, showcasing presentation, styling, and performance experience.</p>
+                    <a class="card-link" href="pages/portfolio/talent.html">Read more →</a>
                 </div>
             </article>
         </div>
     </section>
+    <!-- ================================================== -->
 
+
+    <!-- ===================== CONTACT/CTA SECTION ====== -->
     <section class="section-contact" id="contact">
         <div class="contact-inner">
             <div class="contact-cta">

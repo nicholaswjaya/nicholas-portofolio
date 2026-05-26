@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Wijaya's academic portfolio — projects, coursework, and research.">
+    
+    <title>Academic Portfolio — Nicholas Wijaya</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="../../index.html">
+                <img src="../../images/logo_n.png" alt="Nicholas Wijaya">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home">Home</a>
+                <a href="../../index.html#about">About</a>
+                <a href="../../index.html#experience">Experience</a>
+                <a href="../../index.html#achievements">Achievements</a>
+                <a href="../../index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ============== -->
+    <header class="page-header">
+        <span class="page-label">Portfolio · Academic</span>
+        <h1 class="page-title">Academic <em>Projects</em></h1>
+        <p class="page-subtitle">
+            Assignments, university tasks, and coursework projects that explore problem solving, research, and presentation skills within an academic setting.
+        </p>
+    </header>
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== STORY SECTION =========== -->
+    <main class="story">
+
+        <!-- Project 01 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 01</span>
+                <h2 class="chapter-title">Research & <em>Analysis</em></h2>
+                <span class="chapter-tag">2025 · Research Methods</span>
+                <p class="chapter-body">
+                    An in-depth research project exploring current trends and methodologies in information technology. 
+                    This project involved literature review, data analysis, and comprehensive documentation. 
+                    The experience taught me how to approach research systematically and present findings effectively 
+                    to academic audiences.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">📊</span>
+                        Research Project
+                    </div>
+                </div>
+                <span class="year-badge">2025</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— more work ahead —</i><span></span>
+        </div>
+
+        <!-- Project 02 -->
+        <article class="chapter flip" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 02</span>
+                <h2 class="chapter-title">Technical <em>Documentation</em></h2>
+                <span class="chapter-tag">2026 · Web Development</span>
+                <p class="chapter-body">
+                    A comprehensive documentation project for web development concepts and best practices. 
+                    This assignment strengthened my ability to explain technical concepts clearly and create 
+                    organized documentation. The project emphasized the importance of clear communication 
+                    in technical writing.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">📝</span>
+                        Documentation Project
+                    </div>
+                </div>
+                <span class="year-badge">2026</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— continuing journey —</i><span></span>
+        </div>
+
+        <!-- Project 03 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Project 03</span>
+                <h2 class="chapter-title">Group <em>Collaboration</em></h2>
+                <span class="chapter-tag">2026 · Team Project</span>
+                <p class="chapter-body">
+                    A collaborative project with classmates that required coordination, division of responsibilities, 
+                    and unified presentation. Working with diverse perspectives taught me the value of teamwork 
+                    and how different strengths can come together to create better results than individual efforts.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">👥</span>
+                        Group Project
+                    </div>
+                </div>
+                <span class="year-badge">2026</span>
+            </div>
+        </article>
+
+    </main>
+    <!-- ================================================== -->
+
+
+    <!-- =================== CLOSING ====================== -->
+    <section class="story-closing">
+        <div class="closing-card" data-scroll>
+            <p class="closing-quote">
+                "Academic projects are more than assignments — 
+                they're opportunities to develop skills that extend far beyond the classroom."
+            </p>
+            <span class="closing-attr">— Nicholas Wijaya</span>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        // Scroll-reveal for chapters and closing card
+        const scrollEls = document.querySelectorAll('[data-scroll]');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        scrollEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

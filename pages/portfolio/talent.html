@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Wijaya's modeling and talent portfolio.">
+    
+    <title>Talent / Model Portfolio — Nicholas Wijaya</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="brand" href="../../index.html">
+                <img src="../../images/logo_n.png" alt="Nicholas Wijaya">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home">Home</a>
+                <a href="../../index.html#about">About</a>
+                <a href="../../index.html#experience">Experience</a>
+                <a href="../../index.html#achievements">Achievements</a>
+                <a href="../../index.html#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-actions"></div>
+        </div>
+    </nav>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== PAGE HEADER ============== -->
+    <header class="page-header">
+        <span class="page-label">Portfolio · Talent / Model</span>
+        <h1 class="page-title">Talent & <em>Modeling</em></h1>
+        <p class="page-subtitle">
+            Selected modeling and talent work examples, showcasing presentation, styling, and performance experience.
+        </p>
+    </header>
+    <div class="header-rule"></div>
+    <!-- ================================================== -->
+
+
+    <!-- ===================== STORY SECTION =========== -->
+    <main class="story">
+
+        <!-- Work 01 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Work 01</span>
+                <h2 class="chapter-title">Competition <em>Appearances</em></h2>
+                <span class="chapter-tag">2023-2025 · Talent Competitions</span>
+                <p class="chapter-body">
+                    Participated in multiple regional talent competitions, developing stage presence and confidence. 
+                    Each competition brought valuable experience in performance, audience interaction, and handling pressure. 
+                    These appearances helped me understand the importance of preparation, attitude, and consistency 
+                    in competitive environments.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">🏆</span>
+                        Competition Performance
+                    </div>
+                </div>
+                <span class="year-badge">2023-25</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— more opportunities —</i><span></span>
+        </div>
+
+        <!-- Work 02 -->
+        <article class="chapter flip" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Work 02</span>
+                <h2 class="chapter-title">Photo & <em>Content</em></h2>
+                <span class="chapter-tag">2024-2025 · Visual Presentation</span>
+                <p class="chapter-body">
+                    Professional photography sessions and content creation for talent representation. 
+                    Working with photographers and content creators taught me the importance of 
+                    presentation, styling, and how to communicate effectively through visual media. 
+                    These sessions helped develop awareness of posture, angles, and overall image presentation.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">📸</span>
+                        Photo Session
+                    </div>
+                </div>
+                <span class="year-badge">2024-25</span>
+            </div>
+        </article>
+
+        <div class="timeline-divider">
+            <span></span><i>— continued growth —</i><span></span>
+        </div>
+
+        <!-- Work 03 -->
+        <article class="chapter" data-scroll>
+            <div class="chapter-text">
+                <span class="chapter-number">Work 03</span>
+                <h2 class="chapter-title">Brand & <em>Ambassador</em></h2>
+                <span class="chapter-tag">2025 · Representative Role</span>
+                <p class="chapter-body">
+                    Official ambassador and representative roles representing regional brands and tourism organizations. 
+                    These positions required not just appearance but genuine commitment to representing values and 
+                    engaging authentically with communities. This work emphasized the responsibility that comes with 
+                    being a public figure and the impact of consistent, professional representation.
+                </p>
+            </div>
+            <div class="chapter-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">
+                        <span class="ph-icon">⭐</span>
+                        Ambassador Role
+                    </div>
+                </div>
+                <span class="year-badge">2025</span>
+            </div>
+        </article>
+
+    </main>
+    <!-- ================================================== -->
+
+
+    <!-- =================== CLOSING ====================== -->
+    <section class="story-closing">
+        <div class="closing-card" data-scroll>
+            <p class="closing-quote">
+                "Talent and modeling taught me that presentation is important, 
+                but authenticity and purpose are what truly make an impact."
+            </p>
+            <span class="closing-attr">— Nicholas Wijaya</span>
+        </div>
+    </section>
+    <!-- ================================================== -->
+
+
+    <script>
+        // Scroll-reveal for chapters and closing card
+        const scrollEls = document.querySelectorAll('[data-scroll]');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        scrollEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
