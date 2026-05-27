@@ -30,6 +30,14 @@
     z-index: 1;
     overflow: hidden;
 }
+#pic-mobile {
+    display: none;
+}
+
+.profile-pic {
+    display: block;
+}
+
 
 .profile-pic {
     height: 100%;
@@ -49,14 +57,14 @@
 .hero-title #hello {
     display: block;
     font-weight: 500;
-    font-size: 5rem;
+    font-size: clamp(6rem, 5vw, 10rem);
     animation: fadeInUp 1s ease-out 0s forwards;
 }
 
 .hero-title #im {
     font-family: var(--font-sans);
     font-weight: 400;
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 2rem);
     display: inline-block;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
@@ -65,7 +73,7 @@
 .hero-title #name {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 4rem;
+    font-size: clamp(2rem, 5vw, 7rem);
     font-style: italic;
     display: inline-block;
     opacity: 0;
@@ -75,7 +83,7 @@
 .sub_head {
     font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     margin-top: var(--spacing-lg);
     opacity: 0;
     animation: fadeInUp 1s ease-out 1s forwards;
@@ -84,7 +92,7 @@
 .description {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
     margin-top: var(--spacing-sm);
     line-height: 1.5;
     max-width: 35rem;
@@ -232,7 +240,9 @@
 /* ============================================================
    ACHIEVEMENTS SECTION
    ============================================================ */
-
+.foto-achievement {
+    display:none;
+}
 .section-achievements {
     padding: 6rem 8%;
     background: var(--bg-gradient);
@@ -354,17 +364,14 @@
 
 .portfolio-cards {
     display: flex;
-    flex-wrap: wrap;
     gap: 1.6rem;
-    width: 100%;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .portfolio-cards .card {
-    flex: 1 1 calc(33.333% - 1.067rem);
-    min-width: 240px;
+    flex: 1 1 30%;
 }
-
 
 /* ============================================================
    CONTACT/CTA SECTION

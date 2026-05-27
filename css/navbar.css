@@ -85,44 +85,30 @@
    NAVBAR RESPONSIVE
    ============================================================ */
 
-@media (max-width: 768px) {
-    .navbar {
-        width: calc(100% - 32px);
+@media (orientation: portrait) {
+
+.navbar {
+        padding: 0.8rem 4%;
     }
 
     .nav-inner {
-        padding: 8px 16px;
+        padding: 10px 14px;
+        border-radius: 14px;
     }
 
     .nav-links {
-        gap: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+
+        flex-wrap: nowrap;
+        width: 100%;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-    }
-
-    .brand {
-        font-size: 1rem;
-    }
-
-    .brand img {
-        height: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        width: calc(100% - 16px);
-    }
-
-    .nav-links {
-        gap: 0.8rem;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-        padding: 6px 4px;
+        font-size: 0.72rem;
+        white-space: nowrap;
     }
 
     .brand {
@@ -132,4 +118,6 @@
     .brand img {
         height: 24px;
     }
+
 }
+
