@@ -89,7 +89,8 @@
     .section-work,
     .section-portfolio,
     .section-achievements,
-    .section-contact {
+    .section-contact 
+    .section-coursework{
         padding: 4rem 5%;
     }
 

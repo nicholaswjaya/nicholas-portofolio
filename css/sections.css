@@ -466,3 +466,57 @@
     color: var(--secondary-text);
     font-size: 0.96rem;
 }
+/* ============================================================
+   Portfolio Academics 
+   ============================================================ */
+   .section-coursework {
+    min-height: 100vh;
+    padding: 6rem 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--bg-white);
+    }
+    #coursework_intro {
+        margin-top:2rem;
+        text-align: center;
+        max-width: 600px;
+    }
+    .coursework-cards .card-image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
+    .coursework-cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 4rem;
+        flex-wrap: wrap;
+    }
+    .coursework-cards .card {
+        width: 350px;
+        max-width: 100%;
+        background: #fff;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+        transition: 0.3s ease;
+    }
+    .coursework-cards .card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+    .coursework-cards .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .coursework-cards .card-body {
+    padding: 1.8rem;
+    text-align: center;
+    }
